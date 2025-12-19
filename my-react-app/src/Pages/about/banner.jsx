@@ -5,9 +5,7 @@ import "../../assets/style/pages/banner.scss"
 export default function About() {
   return (
     <div className="container_banner">
-  <section className="banner" style={{backgroundImage: `linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url(${banner})`,}}>
-    
-  </section>
+  <section className="banner" style={{backgroundImage: `linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url(${banner})`,}}/>
   </div>
   )
 }
