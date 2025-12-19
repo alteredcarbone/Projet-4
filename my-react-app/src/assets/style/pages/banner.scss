@@ -1,0 +1,25 @@
+.container_banner{
+    
+    margin: 0 auto;
+    padding: 0 100px 10px 100px ;
+
+        .banner{
+            height: 223px;
+            border-radius: 25px;
+            overflow: hidden;
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 8px 15px -5px rgba(0, 0, 0, 0.3);      
+        }
+
+        .banner_title{
+            color: white;
+            font-size: 48px;
+            font-family: 'Montserrat';
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.6);
+        }
+}
+
