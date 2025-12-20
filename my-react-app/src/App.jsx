@@ -2,6 +2,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Layout from "./Components/Layout/layout";
 import Home from "./Pages/home/home";
 import About from "./Pages/about/about";
+import Location from "./Pages/location/location";
 import "../src/assets/style/global.scss"
 
 export default function App() {
@@ -11,6 +12,7 @@ export default function App() {
         <Route element={<Layout />}>
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
+          <Route path="/locations/:id" element={<Location />}/>
         </Route>
       </Routes>
     </BrowserRouter>

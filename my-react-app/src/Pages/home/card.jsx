@@ -18,6 +18,7 @@ export default function Card() {
                         alt={logement.title}
                         className="card_img"
                     />
+                    <div className="card__shadow"></div>
                     <h2 className="card_title">{logement.title}</h2>
                 </Link>
             ))}
