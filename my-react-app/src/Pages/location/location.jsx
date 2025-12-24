@@ -1,33 +1,35 @@
 import { useParams } from "react-router-dom";
 import { useMemo, useState } from "react";
-import logements from "../../data/logements.json";
+import locations from "../../data/location.json";
 import "../../assets/style/pages/location.scss"
 
 
 export default function Location(){
+    const [openDesc, setOpenDesc] = useState(false);
+    const [openEquip, setOpenEquip] = useState(false);
     const{id} = useParams()
-   const logement = useMemo(
-    () => logements.find((item) => item.id === id),
+    const location = useMemo(
+    () => locations.find((item) => item.id === id),
     [id]
   );
 
   const [index, setIndex] = useState(0);
 
-  if (!logement) return <Navigate to="/404" />;
+  if (!location) return <Navigate to="/404" />;
 
-  const pictures = logement.pictures || [];
+  const pictures = location.pictures || [];
   const total = pictures.length;
 
   const prev = () => setIndex((i) => (i === 0 ? total - 1 : i - 1));
   const next = () => setIndex((i) => (i === total - 1 ? 0 : i + 1));
 
   return (
-    <section className="location">
+  <section className="location">
       {/* Slider */}
       <div className="slider">
         <img
           src={pictures[index]}
-          alt={`${logement.title} - ${index + 1}`}
+          alt={`${location.title} - ${index + 1}`}
           className="slider__img"
         />
 
@@ -48,13 +50,86 @@ export default function Location(){
       </div>
 
       {/* Infos */}
-      <h1>{logement.title}</h1>
-      <p>{logement.location}</p>
-      <p>{logement.description}</p>
-      <p>{logement.tags}</p>
-      <p>{logement.rating}</p>
-      <p>{logement.name}</p>
-      <p>{logement.equipments}</p>
-    </section>
+      <div className="location__header">
+        <div className="location__info">
+          <h1 className="location__title">{location.title}</h1>
+          <p className="location__place">{location.location}</p>
+        </div>
+        <div className="host">
+            <p className="host__name">{location.host.name}</p>
+            <img
+              src={location.host.picture}
+              alt={location.host.name}
+              className="host__picture"
+            />
+        </div>
+      </div>
+      
+      <div className="location__meta">
+        
+        <div className="tags">
+          {location.tags.map((tag, index) => (
+            <span key={index} className="tag">
+              {tag}
+            </span>
+          ))}
+        </div>
+
+      
+        <div className="rating">
+          {[1, 2, 3, 4, 5].map((star) => (
+            <span
+              key={star}
+              className={
+                star <= Number(location.rating)
+                  ? "star  star--active"
+                  : "star"
+              }
+            >
+              ★
+            </span>
+          ))}
+        </div>
+    </div>
+    <div className="location__dropdowns">
+      {/* Description */}
+      <div className="dropdown">
+        <button
+          className="dropdown__header"
+          onClick={() => setOpenDesc(!openDesc)}
+        >
+          <span>Description</span>
+        <span className={`arrow ${openDesc ? "arrow--open" : ""}`}>⌃</span>
+        </button>
+
+        {openDesc && (
+          <div className="dropdown__content">
+           <p>{location.description}</p>
+         </div>
+        )}
+      </div>
+
+      {/* Équipements */}
+      <div className="dropdown">
+        <button
+          className="dropdown__header"
+          onClick={() => setOpenEquip(!openEquip)}
+        >
+          <span>Équipements</span>
+          <span className={`arrow ${openEquip ? "arrow--open" : ""}`}>⌃</span>
+        </button>
+
+        {openEquip && (
+          <div className="dropdown__content">
+            <ul>
+              {location.equipments.map((equip, index) => (
+                <li key={index}>{equip}</li>
+              ))}
+            </ul>
+          </div>
+        )}
+      </div>
+    </div>
+  </section>
   );
 }

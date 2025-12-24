@@ -1,6 +1,6 @@
 import "../../assets/style/components/card.scss";
 import { Link } from "react-router-dom";
-import logements from "../../data/logements.json";
+import logements from "../../data/location.json";
  
 
 export default function Card() {

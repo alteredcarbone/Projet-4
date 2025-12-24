@@ -1,3 +1,6 @@
+$maincolor : #FF6060;
+$secondcolor : white;
+$ratingcolor : #E3E3E3;
 .location {
     margin: 0 auto;
     padding: 0 100px 10px 100px ;
@@ -12,9 +15,7 @@
                     object-fit: cover;
                     object-position: center;
                     display: block;
-                    
-
-            }
+                }
                 .slider__btn{
                     position: absolute;
                     top: 50%;
@@ -22,7 +23,7 @@
                     border: none;
                     background-color: transparent;
                     font-size: 200px;
-                    color: white;
+                    color: $secondcolor;
                     cursor: pointer;
                     padding: 0 20px;
                     
@@ -38,8 +39,100 @@
                     left: 50%;
                     bottom: 20px;
                     transform: translateX(-50%);
-                    color: white;
+                    color: $secondcolor;
                     font-size: 50px;
+                }                
+        }
+        .location__header{
+            display: flex;
+            justify-content: space-between;
+            margin-top: 20px;
+            align-items: center;
+                .host {
+                    display: flex;
+                    align-items: center;
+                    gap: 10px;
+
+                    .host__name {
+                        color: $maincolor;
+                        text-align: right;
+                        font-size: 18px;
+                    }   
+
+                    .host__picture {
+                    width: 64px;
+                    height: 64px;
+                    border-radius: 50%;
+                    object-fit: cover;
+                    }
                 }
-    }
+                h1 {
+                    color: $maincolor;
+                }
+            }
+            .location__meta {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                margin-top: 20px;
+                .tags {
+                    display: flex;
+                    gap: 10px;
+                    flex-wrap: wrap;
+                }
+                .tag{
+                    background-color: $maincolor;
+                    border-radius: 10px;
+                    color: $secondcolor;
+                    padding: 4px 12px;
+                    font-size: 14px;
+                    font-weight: 700;
+                }
+                .rating{
+                    display: flex;
+                    gap: 5px;
+
+                    .star{
+                        font-size: 24px;
+                        color: $ratingcolor
+                    }
+                    .star--active {
+                        color: $maincolor;
+                    }
+                }
+            }
+            .location__dropdowns{
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                gap: 40px;
+                margin-top: 30px;
+
+                .dropdown{
+                    width: 100%;
+                }
+
+                .dropdown__header{
+                    width: 100%;
+                    color: $secondcolor;
+                    background-color: $maincolor;
+                    border: none;
+                    border-radius: 5px;
+                    padding: 12px 15px;
+                    font-size: 24px;
+                    font-weight: 700;
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                    cursor: pointer;
+                    
+                }
+                .arrow {
+                    font-size: 24px;
+                    transition: transform 0.3s ease;
+
+                    .arrow--open{
+                        transform: rotate(180deg);
+                    }
+                    }
+            }
 }
