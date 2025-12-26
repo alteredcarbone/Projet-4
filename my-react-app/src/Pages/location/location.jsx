@@ -99,7 +99,23 @@ export default function Location(){
           onClick={() => setOpenDesc(!openDesc)}
         >
           <span>Description</span>
-        <span className={`arrow ${openDesc ? "arrow--open" : ""}`}>⌃</span>
+          <span className={`arrow ${openDesc ? "arrow--open" : ""}`}>
+          <svg
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+          <path
+            d="M6 15L12 9L18 15"
+            stroke="white"
+            strokeWidth="2"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+          />
+          </svg>
+        </span>
         </button>
 
         {openDesc && (
@@ -116,7 +132,23 @@ export default function Location(){
           onClick={() => setOpenEquip(!openEquip)}
         >
           <span>Équipements</span>
-          <span className={`arrow ${openEquip ? "arrow--open" : ""}`}>⌃</span>
+          <span className={`arrow ${openDesc ? "arrow--open" : ""}`}>
+          <svg
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+        <path
+          d="M6 15L12 9L18 15"
+          stroke="white"
+          strokeWidth="2"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        />
+      </svg>
+</span>
         </button>
 
         {openEquip && (

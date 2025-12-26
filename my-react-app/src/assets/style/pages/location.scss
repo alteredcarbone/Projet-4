@@ -109,9 +109,8 @@ $ratingcolor : #E3E3E3;
 
                 .dropdown{
                     width: 100%;
-                }
-
-                .dropdown__header{
+                    
+                    .dropdown__header{
                     width: 100%;
                     color: $secondcolor;
                     background-color: $maincolor;
@@ -125,14 +124,20 @@ $ratingcolor : #E3E3E3;
                     align-items: center;
                     cursor: pointer;
                     
+                        .arrow {
+                        font-size: 24px;
+                        transition: transform 0.3s ease;
+                                        
+                        }
+                            .arrow--open{
+                            transform: rotate(180deg);
+                            }
+                    }
+                
                 }
-                .arrow {
-                    font-size: 24px;
-                    transition: transform 0.3s ease;
-
-                    .arrow--open{
-                        transform: rotate(180deg);
+                    .dropdown__content {
+                        background-color: $ratingcolor;
                     }
-                    }
+                
             }
 }
