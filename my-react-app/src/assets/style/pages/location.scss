@@ -101,43 +101,12 @@ $ratingcolor : #E3E3E3;
                     }
                 }
             }
-            .location__dropdowns{
+            .location__dropdowns {
                 display: grid;
                 grid-template-columns: 1fr 1fr;
                 gap: 40px;
                 margin-top: 30px;
-
-                .dropdown{
-                    width: 100%;
-                    
-                    .dropdown__header{
-                    width: 100%;
-                    color: $secondcolor;
-                    background-color: $maincolor;
-                    border: none;
-                    border-radius: 5px;
-                    padding: 12px 15px;
-                    font-size: 24px;
-                    font-weight: 700;
-                    display: flex;
-                    justify-content: space-between;
-                    align-items: center;
-                    cursor: pointer;
-                    
-                        .arrow {
-                        font-size: 24px;
-                        transition: transform 0.3s ease;
-                                        
-                        }
-                            .arrow--open{
-                            transform: rotate(180deg);
-                            }
-                    }
                 
-                }
-                    .dropdown__content {
-                        background-color: $ratingcolor;
-                    }
-                
+                   
             }
 }

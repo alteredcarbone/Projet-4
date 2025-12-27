@@ -2,11 +2,9 @@ import { useParams } from "react-router-dom";
 import { useMemo, useState } from "react";
 import locations from "../../data/location.json";
 import "../../assets/style/pages/location.scss"
-
+import Collapse from "../../Components/collapse/collapse.jsx";
 
 export default function Location(){
-    const [openDesc, setOpenDesc] = useState(false);
-    const [openEquip, setOpenEquip] = useState(false);
     const{id} = useParams()
     const location = useMemo(
     () => locations.find((item) => item.id === id),
@@ -92,76 +90,19 @@ export default function Location(){
         </div>
     </div>
     <div className="location__dropdowns">
-      {/* Description */}
-      <div className="dropdown">
-        <button
-          className="dropdown__header"
-          onClick={() => setOpenDesc(!openDesc)}
-        >
-          <span>Description</span>
-          <span className={`arrow ${openDesc ? "arrow--open" : ""}`}>
-          <svg
-            width="24"
-            height="24"
-            viewBox="0 0 24 24"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-          <path
-            d="M6 15L12 9L18 15"
-            stroke="white"
-            strokeWidth="2"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-          />
-          </svg>
-        </span>
-        </button>
+      <Collapse title="Description">
+        <p>{location.description}</p>
+      </Collapse>
 
-        {openDesc && (
-          <div className="dropdown__content">
-           <p>{location.description}</p>
-         </div>
-        )}
-      </div>
-
-      {/* Équipements */}
-      <div className="dropdown">
-        <button
-          className="dropdown__header"
-          onClick={() => setOpenEquip(!openEquip)}
-        >
-          <span>Équipements</span>
-          <span className={`arrow ${openDesc ? "arrow--open" : ""}`}>
-          <svg
-            width="24"
-            height="24"
-            viewBox="0 0 24 24"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-        <path
-          d="M6 15L12 9L18 15"
-          stroke="white"
-          strokeWidth="2"
-          strokeLinecap="round"
-          strokeLinejoin="round"
-        />
-      </svg>
-</span>
-        </button>
-
-        {openEquip && (
-          <div className="dropdown__content">
-            <ul>
-              {location.equipments.map((equip, index) => (
-                <li key={index}>{equip}</li>
-              ))}
-            </ul>
-          </div>
-        )}
-      </div>
-    </div>
+      <Collapse title="Équipements">
+      <ul>
+        {location.equipments.map((equip, index) => (
+          <li key={index}>{equip}</li>
+        ))}
+      </ul>
+    </Collapse>
+  </div>
+    
   </section>
   );
 }
