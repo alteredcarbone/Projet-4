@@ -3,6 +3,7 @@ $secondcolor : white;
 
 .collapse{
         width: 100%;
+        margin-bottom: 30px;
             .collapse__header{
                 width: 100%;
                 color: $secondcolor;
@@ -16,6 +17,7 @@ $secondcolor : white;
                 justify-content: space-between;
                 align-items: center;
                 cursor: pointer;
+                
                 
                     
                 .collapse__arrow {
@@ -35,7 +37,6 @@ $secondcolor : white;
                         border-radius: 5px 5px 10px 10px;
                         padding: 20px;
                         font-size: 18px;
-                        margin-bottom: 50px;
                         
                             ul {
                                 list-style: none;
