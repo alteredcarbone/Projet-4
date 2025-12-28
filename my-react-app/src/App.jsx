@@ -15,6 +15,6 @@ export default function App() {
           <Route path="/locations/:id" element={<Location />}/>
         </Route>
       </Routes>
-    </BrowserRouter>
+    </BrowserRouter >
   );
 }
