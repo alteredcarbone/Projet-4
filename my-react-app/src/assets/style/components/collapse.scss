@@ -21,9 +21,11 @@ $secondcolor : white;
                 
                     
                 .collapse__arrow {
-                    font-size: 24px;
-                    transition: transform 0.3s ease;
-                                        
+                    transition: transform 0.3s ease;                   
+                        }
+                        .collapse__arrow svg {
+                            height: 32px;
+                            width: 32px;
                         }
                             .collapse__arrow--open{
                             transform: rotate(180deg);

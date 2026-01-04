@@ -3,7 +3,8 @@ import Layout from "./Components/Layout/layout";
 import Home from "./Pages/home/home";
 import About from "./Pages/about/about";
 import Location from "./Pages/location/location";
-import "../src/assets/style/global.scss"
+import "../src/assets/style/global.scss";
+import Error404 from "./Pages/Error/Error.jsx";
 
 export default function App() {
   return (
@@ -13,6 +14,8 @@ export default function App() {
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
           <Route path="/locations/:id" element={<Location />}/>
+          <Route path="/404" element={<Error404 />}/>
+          <Route path="*" element={<Error404 />}/>
         </Route>
       </Routes>
     </BrowserRouter >

@@ -1,4 +1,9 @@
 .about{
-    padding: 0 100px 10px 100px;
+    .collapse__about{
+        display: flex;
+        flex-direction: column;
+        padding: 0 200px 50px 200px;
+                
+    }
     
 }

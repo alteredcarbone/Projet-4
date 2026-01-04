@@ -1,8 +1,10 @@
-import { useParams } from "react-router-dom";
+import { useParams, Navigate } from "react-router-dom";
 import { useMemo, useState } from "react";
 import locations from "../../data/location.json";
 import "../../assets/style/pages/location.scss"
 import Collapse from "../../Components/collapse/collapse.jsx";
+
+
 
 export default function Location(){
     const{id} = useParams()
