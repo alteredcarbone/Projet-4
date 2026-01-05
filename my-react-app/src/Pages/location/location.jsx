@@ -1,54 +1,31 @@
 import { useParams, Navigate } from "react-router-dom";
-import { useMemo, useState } from "react";
+import { useMemo } from "react";
 import locations from "../../data/location.json";
 import "../../assets/style/pages/location.scss"
 import Collapse from "../../Components/collapse/collapse.jsx";
+import Slider from "../../Components/slider/slider.jsx";
 
 
 
 export default function Location(){
     const{id} = useParams()
+
     const location = useMemo(
     () => locations.find((item) => item.id === id),
     [id]
   );
 
-  const [index, setIndex] = useState(0);
-
   if (!location) return <Navigate to="/404" />;
 
-  const pictures = location.pictures || [];
-  const total = pictures.length;
 
-  const prev = () => setIndex((i) => (i === 0 ? total - 1 : i - 1));
-  const next = () => setIndex((i) => (i === total - 1 ? 0 : i + 1));
-
+  
   return (
   <section className="location">
       {/* Slider */}
-      <div className="slider">
-        <img
-          src={pictures[index]}
-          alt={`${location.title} - ${index + 1}`}
-          className="slider__img"
-        />
-
-        {total > 1 && (
-          <>
-            <button className="slider__btn slider__btn--left" onClick={prev} aria-label="Image précédente">
-              ‹
-            </button>
-            <button className="slider__btn slider__btn--right" onClick={next} aria-label="Image suivante">
-              ›
-            </button>
-
-            <div className="slider__count">
-              {index + 1}/{total}
-            </div>
-          </>
-        )}
-      </div>
-
+      <Slider
+        pictures={location.pictures}
+        title={location.title}
+      />
       {/* Infos */}
       <div className="location__header">
         <div className="location__info">
