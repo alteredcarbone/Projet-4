@@ -4,6 +4,7 @@ $secondcolor : white;
 .collapse{
         width: 100%;
         margin-bottom: 30px;
+        display: block;
             .collapse__header{
                 width: 100%;
                 color: $secondcolor;
@@ -50,5 +51,27 @@ $secondcolor : white;
                             }
 
                     }
+@media (max-width: 768px) {
+  .collapse {
+    margin-bottom: 0; // ✅ on évite l’espace en trop (on gère via le parent si possible)
+
+    .collapse__header {
+      padding: 7px 12px;     // ✅ plus fin comme le modèle
+      font-size: 13px;
+      font-weight: 500;      // ✅ moins “gras”
+      line-height: 1.2;
+
+      .collapse__arrow svg {
+        width: 16px;         // ✅ flèche plus petite
+        height: 16px;
+      }
+    }
+
+    .collapse__content {
+      font-size: 12px;
+      padding: 12px;         // ✅ contenu plus compact
+    }
+  }
+}
                 
             

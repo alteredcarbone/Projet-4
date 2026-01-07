@@ -38,3 +38,29 @@ $secondcolor : white;
                     font-size: 18px;
                 }                
         }
+
+@media (max-width: 1024px) {
+  .slider {
+    height: 320px;
+  }
+
+  .slider__btn {
+    font-size: 120px;
+  }
+}
+
+@media (max-width: 768px) {
+  .slider {
+    height: 255px;        
+    border-radius: 10px;  
+  }
+
+  .slider__btn {
+    font-size: 60px;      
+    padding: 0 10px;      
+  }
+
+  .slider__count {
+    display: none;        
+  }
+}

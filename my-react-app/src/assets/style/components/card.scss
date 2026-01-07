@@ -29,7 +29,7 @@
                             left: 0;
                             right: 0;
                             bottom: 0;
-                            height: 40%;               // ⬅️ zone d’ombre
+                            height: 40%;               
                             background: linear-gradient(
                             to top,
                             rgba(0, 0, 0, 0.65),
@@ -48,5 +48,41 @@
                             max-width: 50%;
                         }
             }
+    }
+}
+
+@media (max-width: 1024px) {
+  .container_card {
+    padding: 0 40px 60px 40px;
+
+    .gallery {
+      padding: 30px;
+      gap: 30px;
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+}
+
+
+@media (max-width: 768px) {
+  .container_card {
+    padding: 0 20px 40px 20px;
+
+    .gallery {
+      background-color: transparent; 
+      padding: 0;
+      border-radius: 0;
+      gap: 20px;
+      grid-template-columns: 1fr;
+      
+            .card {
+                height: 255px; 
+            }
+        
+            .card_title {
+            font-size: 16px;
+            max-width: 80%;
+            }
+        }
     }
 }

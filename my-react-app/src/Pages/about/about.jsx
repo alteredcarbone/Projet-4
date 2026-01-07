@@ -5,7 +5,7 @@ import "../../assets/style/pages/about.scss";
 export default function About() {
   return (
    <section className="about">
-    <Banner />   
+    <Banner className="banner"/>   
     <div className="collapse__about">
       <Collapse title="Fiabilité" className> 
         <p>

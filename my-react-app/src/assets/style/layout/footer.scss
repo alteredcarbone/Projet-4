@@ -21,3 +21,21 @@
             }   
         
 }
+
+@media (max-width: 768px) {
+  .footer {
+    height: auto;          
+    padding: 40px 20px;    
+    gap: 15px;
+
+    .footer_logo {
+      height: 30px;
+    }
+
+    .footer_text {
+      font-size: 12px;     
+      line-height: 1.4;
+      max-width: 260px;    
+    }
+  }
+}
