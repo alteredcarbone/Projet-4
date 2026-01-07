@@ -24,10 +24,11 @@
 @media (max-width: 1024px) {
   .container_banner {
     padding: 0 40px 35px 40px;
-
+   
     .banner_title {
       font-size: 36px;
     }
+  
   }
 }
 
@@ -37,8 +38,8 @@
     padding: 0 20px 20px 20px;
 
     .banner {
-      height: 111px;       // ✅ plus petit
-      border-radius: 10px; // ✅ plus mobile
+      height: 111px;       
+      border-radius: 10px; 
       justify-content: flex-start;
       padding: 0 16px;
     }
@@ -47,7 +48,7 @@
       font-size: 24px;
       line-height: 1.1;
       text-align: left;
-      max-width: 220px;    // ✅ force le retour à la ligne
+          
     }
   }
 }

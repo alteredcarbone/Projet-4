@@ -53,23 +53,23 @@ $secondcolor : white;
                     }
 @media (max-width: 768px) {
   .collapse {
-    margin-bottom: 0; // ✅ on évite l’espace en trop (on gère via le parent si possible)
+    margin-bottom: 0; 
 
     .collapse__header {
-      padding: 7px 12px;     // ✅ plus fin comme le modèle
+      padding: 7px 12px;     
       font-size: 13px;
-      font-weight: 500;      // ✅ moins “gras”
+      font-weight: 500;      
       line-height: 1.2;
 
       .collapse__arrow svg {
-        width: 16px;         // ✅ flèche plus petite
+        width: 16px;         
         height: 16px;
       }
     }
 
     .collapse__content {
       font-size: 12px;
-      padding: 12px;         // ✅ contenu plus compact
+      padding: 12px;         
     }
   }
 }
