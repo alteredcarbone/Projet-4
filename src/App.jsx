@@ -14,7 +14,6 @@ export default function App() {
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
           <Route path="/locations/:id" element={<Location />}/>
-          <Route path="/404" element={<Error404 />}/>
           <Route path="*" element={<Error404 />}/>
         </Route>
       </Routes>
