@@ -17,10 +17,9 @@ export default function Location() {
 
   return (
     <section className="location">
-      {/* Slider */}
+      
       <Slider pictures={location.pictures} title={location.title} />
 
-      {/* Infos */}
       <div className="location__header">
         <div className="location__info">
           <h1 className="location__title">{location.title}</h1>
