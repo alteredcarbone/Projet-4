@@ -9,13 +9,13 @@ export default function Header() {
 
             <nav className="header_nav" aria-label="Navigation principale">
                 <NavLink 
-                to="/" className= {({ isActive }) => 
-                'header_link ${ isActive ? "is-active" }'}>
+                to="/" className={({ isActive }) =>
+                `header_link ${isActive ? "is-active" : ""}`}>
                     Accueil
                 </NavLink>
                 <NavLink 
-                    to="/about" className= {({ isActive }) => 
-                    'header_link ${ isActive ? "is-active" }'}>
+                    to="/about" className={({ isActive }) =>
+                    `header_link ${isActive ? "is-active" : ""}`}>
                         A propos
                     </NavLink>
             </nav>

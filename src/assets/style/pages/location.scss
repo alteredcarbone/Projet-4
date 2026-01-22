@@ -21,6 +21,25 @@ $ratingcolor: #E3E3E3;
     h1 {
       color: $maincolor;
     }
+
+    .host {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+
+      .host__name {
+        color: $maincolor;
+        text-align: right;
+        font-size: 18px;
+      }
+
+      .host__picture {
+        width: 64px;
+        height: 64px;
+        border-radius: 50%;
+        object-fit: cover;
+      }
+    }
   }
 
   .location__meta {
@@ -65,24 +84,10 @@ $ratingcolor: #E3E3E3;
       }
     }
 
-    .host {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-
-      .host__name {
-        color: $maincolor;
-        text-align: right;
-        font-size: 18px;
-      }
-
-      .host__picture {
-        width: 64px;
-        height: 64px;
-        border-radius: 50%;
-        object-fit: cover;
-      }
+    .host--meta {
+      display: none;
     }
+
   }
 
   .location__dropdowns {
@@ -90,6 +95,17 @@ $ratingcolor: #E3E3E3;
     grid-template-columns: 1fr 1fr;
     gap: 40px;
     margin-top: 30px;
+    align-items: stretch;
+
+    .collapse {
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .collapse__content {
+      flex: 1;
+    }
   }
 }
 
@@ -112,6 +128,10 @@ $ratingcolor: #E3E3E3;
       align-items: flex-start;
       gap: 10px;
       margin-top: 15px;
+
+      .host--header {
+        display: none;
+      }
     }
 
     .location__meta {
@@ -141,8 +161,13 @@ $ratingcolor: #E3E3E3;
         }
       }
 
-      .host {
+      .host--meta {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+
         .host__name {
+          color: $maincolor;
           font-size: 12px;
           max-width: 90px;
           text-align: right;
@@ -151,6 +176,8 @@ $ratingcolor: #E3E3E3;
         .host__picture {
           width: 32px;
           height: 32px;
+          border-radius: 50%;
+          object-fit: cover;
         }
       }
 
