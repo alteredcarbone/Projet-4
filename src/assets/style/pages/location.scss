@@ -63,7 +63,7 @@ $ratingcolor: #E3E3E3;
       font-weight: 700;
     }
 
-    /* ✅ NOUVEAU : étoiles + host sur la même ligne */
+
     .location__right {
       display: flex;
       align-items: center;
@@ -147,7 +147,7 @@ $ratingcolor: #E3E3E3;
         flex-wrap: wrap;
       }
 
-      /* ✅ Mobile: étoiles à gauche / host à droite, même ligne */
+
       .location__right {
         display: flex;
         justify-content: space-between;

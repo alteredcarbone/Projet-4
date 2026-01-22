@@ -52,19 +52,6 @@
     }
 }
 
-@media (min-width: 1441px) {
-  .container_card {
-    .gallery {
-      grid-template-columns: repeat(auto-fit, 360px);
-      justify-content: center;
-    }
-
-    .card {
-      width: 360px;
-      height: 360px;
-    }
-  }
-}
 
 @media (max-width: 1024px) {
   .container_card {
