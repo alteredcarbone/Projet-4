@@ -1,11 +1,12 @@
-import Banner from "./banner";
+import Banner from "../../Components/Banner/banner";
 import Collapse from "../../Components/collapse/collapse.jsx";
 import "../../assets/style/pages/about.scss";
+import bannerImage from "../../assets/images/banner/banner_2.webp";
 
 export default function About() {
   return (
    <section className="about">
-    <Banner className="banner"/>   
+    <Banner image={bannerImage} />
     <div className="collapse__about">
       <Collapse title="Fiabilité" className> 
         <p>

@@ -40,6 +40,13 @@ $secondcolor : white;
                         border-radius: 5px 5px 10px 10px;
                         padding: 20px;
                         font-size: 18px;
+                        max-height: 0;
+                        opacity: 0;
+                        overflow: hidden;
+                        transform: translateY(-8px);
+                        transition: max-height 0.5s cubic-bezier(0.22, 1, 0.36, 1), opacity 0.35s ease, transform 0.5s cubic-bezier(0.22, 1, 0.36, 1), padding 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+                        display: flex;
+                        align-items: center;
                         
                             ul {
                                 list-style: none;
@@ -50,6 +57,13 @@ $secondcolor : white;
                                  }
                             }
 
+                    }
+
+                    .collapse__content--open {
+                        max-height: 500px;
+                        opacity: 1;
+                        transform: translateY(0);
+                        padding: 20px;
                     }
 @media (max-width: 768px) {
   .collapse {
@@ -69,7 +83,11 @@ $secondcolor : white;
 
     .collapse__content {
       font-size: 12px;
-      padding: 12px;         
+      padding: 20px;         
+    }
+
+    .collapse__content--open {
+      padding: 20px;
     }
   }
 }

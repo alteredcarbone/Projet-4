@@ -15,6 +15,21 @@ export default function Location() {
 
   if (!location) return <Navigate to="/404" />;
 
+  const nameParts = location.host.name.split(" ");
+  const firstName = nameParts.shift() || "";
+  const lastName = nameParts.join(" ");
+  const renderHostName = (
+    <>
+      <span>{firstName}</span>
+      {lastName ? (
+        <>
+          <br />
+          <span>{lastName}</span>
+        </>
+      ) : null}
+    </>
+  );
+
   return (
     <section className="location">
       
@@ -25,9 +40,16 @@ export default function Location() {
           <h1 className="location__title">{location.title}</h1>
           <p className="location__place">{location.location}</p>
         </div>
+        <div className="host host--header">
+          <p className="host__name">{renderHostName}</p>
+          <img
+            src={location.host.picture}
+            alt={location.host.name}
+            className="host__picture"
+          />
+        </div>
       </div>
 
-      
       <div className="location__meta">
         <div className="tags">
           {location.tags.map((tag, index) => (
@@ -48,9 +70,8 @@ export default function Location() {
               </span>
             ))}
           </div>
-
-          <div className="host">
-            <p className="host__name">{location.host.name}</p>
+          <div className="host host--meta">
+            <p className="host__name">{renderHostName}</p>
             <img
               src={location.host.picture}
               alt={location.host.name}
@@ -76,3 +97,7 @@ export default function Location() {
     </section>
   );
 }
+
+
+
+
